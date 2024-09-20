@@ -1,0 +1,172 @@
+:root{
+    --colorBody:rgb(245, 235, 220);
+    --colorWhite:rgb(248, 249, 250);
+    --colorContainer:rgba(45, 28, 3, 0.53);
+}
+
+html, body {
+    /* background-color: var(--colorBody); */
+    background-image: url("../assets/fondo.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+header { 
+    width: 100%;
+
+    nav {
+        display: flex;
+        justify-content: center;
+        padding: 2%;
+        background-color: var(--colorContainer);
+
+        label {
+            font-size: 290%;
+            margin: 5px;
+        }
+    }
+
+    img {
+        width: 5%;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+}
+
+.bounce-animation {
+    animation: bounce 1.5s ease-in-out infinite; 
+}
+
+.containerPrincipal{
+    display: flex;
+    width: 100%;
+}
+
+.container {
+    background-color: var(--colorContainer);
+    text-align: center;
+    width: 30%;
+    display: flex;
+}
+
+.controls{
+    display: grid;
+    padding: 5%;
+
+    & label{
+        font-size: 180%;
+    }
+
+    & button{
+        width: 50%;
+        height: 120%;
+        margin-top: 8%;
+    }
+}
+
+  
+.controls button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#start-fries, #start-burger{
+    width: 80%;
+
+    & img{
+        width: 80%;
+    }
+}
+
+#start-drink{
+    width: 80%;
+
+    & img{
+        width: 60%;
+    }
+}
+  
+.progress-bars {
+    color: var(--colorWhite);
+    margin-top: 20px;
+}
+
+#progress-fries, #progress-burger, #progress-drink{
+    background-color: green;
+}
+
+.fries{
+    width: 100%;
+    margin-top: 80%;
+}
+
+.burguer{
+    width: 100%;
+    margin-top: 50%;
+}
+
+.drink{
+    width: 100%;
+    margin-top: 80%;
+}
+
+.containerPrepare{
+    align-content: center;
+    text-align: center;
+    width: 60%;
+
+    & img{
+        margin-top: 15%;
+        width: 60%;
+    }
+}
+
+#clock {
+    width: 5%;
+    position: absolute; 
+    right: 10%;
+    margin-top: -10%;
+}
+
+#clockDisplay{
+    background-color: var(--colorBody);
+    width: 6%;
+    height: 10%;
+    font-size: 6vh;
+    position: absolute; 
+    right: 15%;
+    margin-top: -10%;
+    border-radius: 5px;
+}
+
+/**************/
+#food-items img {
+    width: 10%; 
+    margin: 5px;
+    position: absolute;
+    z-index: 1;
+}
+
+#food-items .fries {
+    top: 50%;
+    right: 45%;
+}
+
+#food-items .burger {
+    top: 60%;
+    right: 35%;
+}
+
+#food-items .drink {
+    top: 35%;
+    right: 26%;
+}

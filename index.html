@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooking My Burguer</title>
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img class="bounce-animation" src="./assets/img/cocinero.png" alt=""/>
+            <label class="bounce-animation">Bienvenido chef, ¡las ordenes te esperan!</label> 
+            <img class="bounce-animation" src="./assets/img/coctel.png" alt=""/>
+        </nav>
+    </header>
+
+
+    <div class="containerPrincipal">
+        <div class="container">
+            <div class="controls">
+                <label>Cocina</label>
+                <button id="start-fries">
+                    <img src="./assets/img/papitas.png"/>
+                </button>
+                <button id="start-burger">
+                    <img src="./assets/img/burguer.png"/>
+                </button>
+                <button id="start-drink">
+                    <img src="./assets/img/coke.png"/>
+                </button>
+            </div>
+    
+            <div class="progress-bars">
+                <div class="fries">
+                    <h3>Papas Fritas</h3>
+                    <progress id="progress-fries" max="100" value="0"></progress>
+                </div>
+    
+                <div class="burguer">
+                    <h3>Hamburguesa</h3>
+                    <progress id="progress-burger" max="100" value="0"></progress>
+                </div>
+    
+                <div class="drink">
+                    <h3>Refresco</h3>
+                    <progress id="progress-drink" max="100" value="0"></progress>
+                </div>
+            </div>
+        </div>
+
+        <div class="containerPrepare">
+            <div id="clockDisplay"></div>
+            <button id="clock">
+                <label>Iniciar</label>
+                <img src="./assets/img/despertador.png" alt="Clock"/>
+            </button>
+            <img id="charola" src="./assets/img/charola.png" alt="Charola"/>
+            <div id="food-items"></div> 
+            <div id="message"></div>
+        </div>
+        
+        
+    </div>
+
+
+  <script src="./js/app.js"></script>
+  <script src="./js/temporizador.js"></script>
+</body>
+</html>
