@@ -5,7 +5,7 @@ let isTimerRunning = false;
 
 clockButton.addEventListener('click', () => {
     if (!isTimerRunning) {
-        const duration = 10; // tiempo a dar al jugador
+        const duration = 20; 
         worker.postMessage({ duration });
         isTimerRunning = true;
         clockButton.querySelector('label').innerText = 'Detener';
@@ -20,7 +20,6 @@ clockButton.addEventListener('click', () => {
 worker.onmessage = function(event) {
     if (event.data === 'time-up') {
         alert('¡Tiempo agotado!');
-        // bloqueando todo el juego
         document.querySelectorAll('.blockable').forEach(el => {
             el.disabled = true; 
         });

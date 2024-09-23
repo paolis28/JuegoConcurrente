@@ -2,6 +2,7 @@
     --colorBody:rgb(245, 235, 220);
     --colorWhite:rgb(248, 249, 250);
     --colorContainer:rgba(45, 28, 3, 0.53);
+    --colorProgress:rgb(0, 128, 0);
 }
 
 html, body {
@@ -42,7 +43,8 @@ header {
 }
 
 .bounce-animation {
-    animation: bounce 1.5s ease-in-out infinite; 
+    animation: bounce 1.5s ease-in-out infinite;
+    color: var(--colorWhite); 
 }
 
 .containerPrincipal{
@@ -80,7 +82,7 @@ header {
 }
 
 #start-fries, #start-burger{
-    width: 80%;
+    width: 70%;
 
     & img{
         width: 80%;
@@ -88,7 +90,7 @@ header {
 }
 
 #start-drink{
-    width: 80%;
+    width: 60%;
 
     & img{
         width: 60%;
@@ -101,7 +103,7 @@ header {
 }
 
 #progress-fries, #progress-burger, #progress-drink{
-    background-color: green;
+    background-color: var(--colorProgress);
 }
 
 .fries{
@@ -116,7 +118,7 @@ header {
 
 .drink{
     width: 100%;
-    margin-top: 80%;
+    margin-top: 50%;
 }
 
 .containerPrepare{
@@ -134,7 +136,7 @@ header {
     width: 5%;
     position: absolute; 
     right: 10%;
-    margin-top: -10%;
+    margin-top: -8%;
 }
 
 #clockDisplay{
@@ -144,7 +146,7 @@ header {
     font-size: 6vh;
     position: absolute; 
     right: 15%;
-    margin-top: -10%;
+    margin-top: -8%;
     border-radius: 5px;
 }
 
@@ -170,3 +172,4 @@ header {
     top: 35%;
     right: 26%;
 }
+

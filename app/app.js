@@ -11,19 +11,40 @@ let friesWorker, burgerWorker, drinkWorker;
 
 const foodItems = document.getElementById('food-items');
 
-// Función para mostrar una imagen de alimento en la charola
+
+const orderContainer = document.querySelector('.containerMenu');
+
+// Inicializar el worker para órdenes
+const orderWorker = new Worker('./workers/order.js');
+
+orderWorker.postMessage({ interval: 5000 }); 
+orderWorker.onmessage = function(event) {
+  const newOrder = event.data; 
+  addOrderToUI(newOrder);       
+};
+
+
+function addOrderToUI(order) {
+  const orderSpan = document.createElement('span'); 
+  const orderLabel = document.createElement('label'); 
+  orderLabel.textContent = `Orden: ${order.items.join(", ")}`;  
+  orderSpan.appendChild(orderLabel); 
+  orderContainer.appendChild(orderSpan);  
+}
+
+
 function addOrderImage(imageSrc, altText, className) {
   const imgElement = document.createElement('img');
   imgElement.src = imageSrc;
   imgElement.alt = altText;
-  imgElement.classList.add(className); // Asignamos la clase para posicionamiento
+  imgElement.classList.add(className);
   foodItems.appendChild(imgElement);
 }
 
 // Preparando papitas
 startFriesBtn.addEventListener('click', () => {
 if (!friesWorker) {
-  friesWorker = new Worker('./workers/friesWorker.js'); 
+  friesWorker = new Worker('./workers/fries.js'); 
   friesWorker.postMessage({});
   friesWorker.onmessage = (event) => {
     const { progress, done } = event.data;
@@ -41,7 +62,7 @@ if (!friesWorker) {
 // Preparando la hamburguesa
 startBurgerBtn.addEventListener('click', () => {
 if (!burgerWorker) {
-  burgerWorker = new Worker('./workers/burgerWorker.js');
+  burgerWorker = new Worker('./workers/burger.js');
   burgerWorker.postMessage({});
   burgerWorker.onmessage = (event) => {
     const { progress, done } = event.data;
@@ -59,7 +80,7 @@ if (!burgerWorker) {
 // Preparando la Coca
 startDrinkBtn.addEventListener('click', () => {
 if (!drinkWorker) {
-  drinkWorker = new Worker('./workers/drinkWorker.js');
+  drinkWorker = new Worker('./workers/drink.js');
   drinkWorker.postMessage({});
   drinkWorker.onmessage = (event) => {
     const { progress, done } = event.data;
@@ -73,4 +94,10 @@ if (!drinkWorker) {
   };
 }
 });
+
+
+
+
+
+
 
